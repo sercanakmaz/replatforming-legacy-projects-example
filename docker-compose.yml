@@ -1,0 +1,25 @@
+version: "3.3"
+
+services:
+
+  mongo:
+    image: mongo:3.4
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb-vol:/data/db
+
+  mssql-server-linux:
+    image: microsoft/mssql-server-linux:latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Express
+      - SA_PASSWORD=1
+    ports:
+      - 1433:1433
+    volumes:
+      - ./sql/:/var/opt/mssql
+
+
+volumes:
+  mongodb-vol:
