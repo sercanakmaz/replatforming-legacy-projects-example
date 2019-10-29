@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalApprouchToReplatfo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalApprouchToReplatform.New.Api", "PracticalApprouchToReplatform.New.Api\PracticalApprouchToReplatform.New.Api.csproj", "{A765297B-153D-4F97-90FF-D4F739B13CB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalApprouchToReplatform.Legacy.UI", "PracticalApprouchToReplatform.Legacy.UI\PracticalApprouchToReplatform.Legacy.UI.csproj", "{3651EE29-30D1-43D6-BA2E-F61FAD633E50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalApprouchToReplatform.New.UI", "PracticalApprouchToReplatform.New.UI\PracticalApprouchToReplatform.New.UI.csproj", "{27610097-CE6B-4F71-81A6-7A06B40E1A99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{A765297B-153D-4F97-90FF-D4F739B13CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A765297B-153D-4F97-90FF-D4F739B13CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A765297B-153D-4F97-90FF-D4F739B13CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3651EE29-30D1-43D6-BA2E-F61FAD633E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3651EE29-30D1-43D6-BA2E-F61FAD633E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3651EE29-30D1-43D6-BA2E-F61FAD633E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3651EE29-30D1-43D6-BA2E-F61FAD633E50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27610097-CE6B-4F71-81A6-7A06B40E1A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27610097-CE6B-4F71-81A6-7A06B40E1A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27610097-CE6B-4F71-81A6-7A06B40E1A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27610097-CE6B-4F71-81A6-7A06B40E1A99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

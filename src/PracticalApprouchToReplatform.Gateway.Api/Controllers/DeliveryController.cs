@@ -9,22 +9,22 @@ namespace PracticalApprouchToReplatform.Gateway.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PackageController : ControllerBase
+    public class DeliveryController : ControllerBase
     {
         private readonly INewApiClient _newApiClient;
         private readonly ILegacyApiClient _legacyApiClient;
 
-        public PackageController(INewApiClient newApiClient, ILegacyApiClient legacyApiClient)
+        public DeliveryController(INewApiClient newApiClient, ILegacyApiClient legacyApiClient)
         {
             _newApiClient = newApiClient;
             _legacyApiClient = legacyApiClient;
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(CreatePackageCommand command)
+        public async Task<IActionResult> Post(CreateDeliveryCommand command)
         {
-            command.Source = SourceConsts.Legacy;
-            var response = await _legacyApiClient.CreatePackage(command);
+            command.Source = SourceConsts.New;
+            var response = await _newApiClient.CreateDelivery(command);
 
             if (!response.IsSuccessStatusCode)
             {
@@ -36,12 +36,12 @@ namespace PracticalApprouchToReplatform.Gateway.Api.Controllers
             return this.StatusCode((int) response.StatusCode, response.Content);
         }
 
-        private void  AddSecondaryCallJob(CreatePackageCommand command)
+        private void  AddSecondaryCallJob(CreateDeliveryCommand command)
         {
             FluentScheduler.JobManager.AddJob(
                 async () =>
                 {
-                    await _newApiClient.CreateDelivery(new CreateDeliveryCommand()
+                    await _legacyApiClient.CreatePackage(new CreatePackageCommand
                     {
                         Barcode = command.Barcode,
                         Destination = command.Destination,

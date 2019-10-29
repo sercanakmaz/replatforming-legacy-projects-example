@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "PracticalApprouchToReplatform.Legacy.Api": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:4005",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://*:4005"
+      }
+    }
+  }
+}

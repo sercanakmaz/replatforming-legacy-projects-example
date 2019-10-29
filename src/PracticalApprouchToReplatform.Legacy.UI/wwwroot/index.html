@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Legacy project</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script type="text/javascript">
+        $.fn.serializeObject = function() {
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function() {
+                if (o[this.name]) {
+                    if (!o[this.name].push) {
+                        o[this.name] = [o[this.name]];
+                    }
+                    o[this.name].push(this.value || '');
+                } else {
+                    o[this.name] = this.value || '';
+                }
+            });
+            return o;
+        };
+    </script>
+</head>
+<body>
+<div class="container-fluid">
+    <h1>Legacy Project</h1>
+    <form>
+        <div class="form-group">
+            <label for="barcode">Barcode</label>
+            <input type="text" class="form-control" id="barcode" name="barcode"
+                   placeholder="Enter barcode">
+        </div>
+        <div class="form-group">
+            <label for="destination">Password</label>
+            <input type="text" class="form-control" id="destination" name="destination" placeholder="Enter destination">
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('form').on('submit', function () {
+            var data = $(this).serializeObject();
+
+            $.ajax({
+                url:'http://localhost:3000/api/package',
+                method:'POST',
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                dataType:'json',
+                success: function(data){window.location.reload();},
+                failure: function(errMsg) {
+                    alert(errMsg);
+                }
+            });
+
+            return false;
+        })
+    })
+</script>
+</body>
+</html>
