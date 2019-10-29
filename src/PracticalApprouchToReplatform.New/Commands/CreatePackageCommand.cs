@@ -1,4 +1,4 @@
-namespace PracticalApprouchToReplatform.Legacy.Commands
+namespace PracticalApprouchToReplatform.New.Commands
 {
     public class CreatePackageCommand: BaseCommand
     {

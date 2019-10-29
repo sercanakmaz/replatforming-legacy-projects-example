@@ -1,5 +1,5 @@
-@using PracticalApprouchToReplatform.Legacy.Controllers
-@model PracticalApprouchToReplatform.Legacy.Commands.CreatePackageCommand
+@using PracticalApprouchToReplatform.New.Controllers
+@model PracticalApprouchToReplatform.New.Commands.CreatePackageCommand
 
 @{
     ViewBag.Title = "Create package";
@@ -12,8 +12,6 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Barcode)
         @Html.TextBoxFor(model => model.Barcode, new {@class="form-control",@type="number"})
-        @Html.LabelFor(model => model.Destination)
-        @Html.TextBoxFor(model => model.Destination, new {@class="form-control"})
     </div>
     <button type="submit" class="btn btn-primary">Save</button>
 }

@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalApprouchToReplatfo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalApprouchToReplatform.Legacy", "PracticalApprouchToReplatform.Legacy\PracticalApprouchToReplatform.Legacy.csproj", "{57D73F74-869D-428E-A2A6-0BD4A11C81CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalApprouchToReplatform.New", "PracticalApprouchToReplatform.New\PracticalApprouchToReplatform.New.csproj", "{A765297B-153D-4F97-90FF-D4F739B13CB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{57D73F74-869D-428E-A2A6-0BD4A11C81CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57D73F74-869D-428E-A2A6-0BD4A11C81CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57D73F74-869D-428E-A2A6-0BD4A11C81CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A765297B-153D-4F97-90FF-D4F739B13CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A765297B-153D-4F97-90FF-D4F739B13CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A765297B-153D-4F97-90FF-D4F739B13CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A765297B-153D-4F97-90FF-D4F739B13CB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

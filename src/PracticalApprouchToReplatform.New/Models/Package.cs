@@ -1,4 +1,7 @@
-namespace PracticalApprouchToReplatform.Legacy.Models
+using System;
+using MongoDB.Bson;
+
+namespace PracticalApprouchToReplatform.New.Models
 {
     public class Package
     {
@@ -12,7 +15,7 @@ namespace PracticalApprouchToReplatform.Legacy.Models
             this.Barcode = barcode;
             this.Destination = destination;
         }
-        public int Id { get; set; }
+        public ObjectId Id { get; set; }
         public string Barcode { get; set; }
         public string Destination { get; set; }
     }

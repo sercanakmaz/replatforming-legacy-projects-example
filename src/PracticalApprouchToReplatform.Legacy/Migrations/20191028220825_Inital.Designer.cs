@@ -8,7 +8,7 @@ using PracticalApprouchToReplatform.Legacy.Models;
 
 namespace PracticalApprouchToReplatform.Legacy.Migrations
 {
-    [DbContext(typeof(DefaultContext))]
+    [DbContext(typeof(PackageContext))]
     [Migration("20191028220825_Inital")]
     partial class Inital
     {

@@ -2,20 +2,20 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using PracticalApprouchToReplatform.Legacy.Commands;
-using PracticalApprouchToReplatform.Legacy.Models;
+using PracticalApprouchToReplatform.New.Commands;
+using PracticalApprouchToReplatform.New.Models;
 
-namespace PracticalApprouchToReplatform.Legacy.Controllers
+namespace PracticalApprouchToReplatform.New.Controllers
 {
     public class PackageController : Controller
     {
         private readonly IMicroService2AntiCorruption _microService2AntiCorruption;
-        private readonly PackageContext _context;
+        private readonly IPackageRepository _repository;
 
-        public PackageController(PackageContext context, IMicroService2AntiCorruption microService2AntiCorruption)
+        public PackageController(IPackageRepository repository, IMicroService2AntiCorruption microService2AntiCorruption)
         {
             _microService2AntiCorruption = microService2AntiCorruption;
-            _context = context;
+            _repository = repository;
         }
 
         // GET
@@ -27,9 +27,8 @@ namespace PracticalApprouchToReplatform.Legacy.Controllers
         [HttpPost]
         public async Task<ActionResult> Create(CreatePackageCommand command)
         {
-            _context.Packages.Add(new Package(command.Barcode, command.Destination));
-            await _context.SaveChangesAsync();
-            
+            await _repository.Add(new Package(command.Barcode, command.Destination));
+
             AddCreatePostJob(command);
 
             return RedirectToAction(nameof(Index));

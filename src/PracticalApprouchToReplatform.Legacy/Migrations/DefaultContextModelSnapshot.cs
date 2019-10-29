@@ -7,7 +7,7 @@ using PracticalApprouchToReplatform.Legacy.Models;
 
 namespace PracticalApprouchToReplatform.Legacy.Migrations
 {
-    [DbContext(typeof(DefaultContext))]
+    [DbContext(typeof(PackageContext))]
     partial class DefaultContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

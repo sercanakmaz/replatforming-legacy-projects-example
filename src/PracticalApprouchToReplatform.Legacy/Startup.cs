@@ -33,9 +33,11 @@ namespace PracticalApprouchToReplatform.Legacy
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddHttpClient();
 
-            services.AddDbContext<DefaultContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultContext")));
+            services.AddSingleton<IMicroService2AntiCorruption, MicroService2AntiCorruption>();
+            services.AddDbContext<PackageContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MSSQL")));
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

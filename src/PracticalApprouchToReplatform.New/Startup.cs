@@ -7,8 +7,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MongoDB.Driver;
+using PracticalApprouchToReplatform.New.Models;
 
 namespace PracticalApprouchToReplatform.New
 {
@@ -31,7 +34,13 @@ namespace PracticalApprouchToReplatform.New
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddHttpClient();
 
+            var mongoClient = new MongoClient(Configuration.GetConnectionString("Mongo"));
+            services.AddSingleton(mongoClient.GetDatabase("PracticalApprouchToReplatform"));
+            services.AddSingleton<IPackageRepository, PackageRepository>();
+            services.AddSingleton<IMicroService2AntiCorruption, MicroService2AntiCorruption>();
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -49,7 +58,6 @@ namespace PracticalApprouchToReplatform.New
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
