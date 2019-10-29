@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalApprouchToReplatform.Gateway", "PracticalApprouchToReplatform.Gateway\PracticalApprouchToReplatform.Gateway.csproj", "{557F4366-F099-4611-970D-E55F454E4B44}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalApprouchToReplatform.Gateway.Api", "PracticalApprouchToReplatform.Gateway.Api\PracticalApprouchToReplatform.Gateway.Api.csproj", "{557F4366-F099-4611-970D-E55F454E4B44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalApprouchToReplatform.Legacy", "PracticalApprouchToReplatform.Legacy\PracticalApprouchToReplatform.Legacy.csproj", "{57D73F74-869D-428E-A2A6-0BD4A11C81CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalApprouchToReplatform.Legacy.Api", "PracticalApprouchToReplatform.Legacy.Api\PracticalApprouchToReplatform.Legacy.Api.csproj", "{57D73F74-869D-428E-A2A6-0BD4A11C81CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalApprouchToReplatform.New", "PracticalApprouchToReplatform.New\PracticalApprouchToReplatform.New.csproj", "{A765297B-153D-4F97-90FF-D4F739B13CB1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalApprouchToReplatform.New.Api", "PracticalApprouchToReplatform.New.Api\PracticalApprouchToReplatform.New.Api.csproj", "{A765297B-153D-4F97-90FF-D4F739B13CB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
