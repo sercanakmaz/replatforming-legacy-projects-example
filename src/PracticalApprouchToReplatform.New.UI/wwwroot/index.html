@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
     <script src="lib/jquery/dist/jquery.js"></script>
     <script type="text/javascript">
-        $.fn.serializeObject = function() {
+        $.fn.serializeObject = function () {
             var o = {};
             var a = this.serializeArray();
-            $.each(a, function() {
+            $.each(a, function () {
                 if (o[this.name]) {
                     if (!o[this.name].push) {
                         o[this.name] = [o[this.name]];
@@ -21,6 +21,7 @@
             });
             return o;
         };
+        window.baseAddress = 'http://localhost:3000'; // Legacy API base address 'http://localhost:4005';
     </script>
 </head>
 <body>
@@ -33,7 +34,7 @@
                    placeholder="Enter barcode">
         </div>
         <div class="form-group">
-            <label for="destination">Password</label>
+            <label for="destination">Destination</label>
             <input type="text" class="form-control" id="destination" name="destination" placeholder="Enter destination">
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
@@ -45,17 +46,19 @@
             var data = $(this).serializeObject();
 
             $.ajax({
-                url:'http://localhost:3000/api/delivery',
-                method:'POST',
+                url: window.baseAddress + '/api/delivery',
+                method: 'POST',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
-                dataType:'json',
-                success: function(data){window.location.reload();},
-                failure: function(errMsg) {
+                dataType: 'json',
+                success: function (data) {
+                    window.location.reload();
+                },
+                failure: function (errMsg) {
                     alert(errMsg);
                 }
             });
-            
+
             return false;
         })
     })

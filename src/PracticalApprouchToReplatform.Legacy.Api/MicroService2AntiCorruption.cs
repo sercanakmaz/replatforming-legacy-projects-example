@@ -33,10 +33,11 @@ namespace PracticalApprouchToReplatform.Legacy.Api
 
     public class RemotePackage
     {
-        public RemotePackage(string barcode, string destination)
+        public RemotePackage(string barcode, string destination, int userId)
         {
+            Barcode = barcode;
             Destination = destination;
-            UserId = new Random().Next(0, 100000);
+            UserId = userId;
         }
 
         [JsonProperty("Tittle")] 

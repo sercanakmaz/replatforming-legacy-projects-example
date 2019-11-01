@@ -10,7 +10,6 @@ namespace PracticalApprouchToReplatform.New.Api
     {
         Task CreatePackage(RemotePackage post);
     }
-
     public class MicroService2AntiCorruption : IMicroService2AntiCorruption
     {
         private readonly HttpClient _httpClient;
@@ -33,10 +32,11 @@ namespace PracticalApprouchToReplatform.New.Api
 
     public class RemotePackage
     {
-        public RemotePackage(string barcode, string destination)
+        public RemotePackage(string barcode, string destination, int userId)
         {
+            Barcode = barcode;
             Destination = destination;
-            UserId = new Random().Next(0, 100000);
+            UserId = userId;
         }
 
         [JsonProperty("Tittle")] 

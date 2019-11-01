@@ -35,6 +35,7 @@ namespace PracticalApprouchToReplatform.New.Api
             var mongoClient = new MongoClient(Configuration.GetConnectionString("Mongo"));
             services.AddSingleton(mongoClient.GetDatabase("PracticalApprouchToReplatform"));
             services.AddSingleton<IDeliveryRepository, DeliveryRepository>();
+            services.AddSingleton<IMicroService1AntiCorruption, MicroService1AntiCorruption>();
             services.AddSingleton<IMicroService2AntiCorruption, MicroService2AntiCorruption>();
             
             services.AddSwaggerGen(c =>

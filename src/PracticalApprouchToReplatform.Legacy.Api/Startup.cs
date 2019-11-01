@@ -31,6 +31,7 @@ namespace PracticalApprouchToReplatform.Legacy.Api
             
             services.AddHttpClient();
 
+            services.AddSingleton<IMicroService1AntiCorruption, MicroService1AntiCorruption>();
             services.AddSingleton<IMicroService2AntiCorruption, MicroService2AntiCorruption>();
             services.AddDbContext<PackageContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MSSQL")));
